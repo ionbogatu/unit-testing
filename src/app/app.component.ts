@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MobileService } from './services/mobile.service';
 
 @Component({
   selector: 'app-root',
@@ -10,4 +11,10 @@ import { RouterOutlet } from '@angular/router';
 })
 export class AppComponent {
   title = 'unit-testing';
+
+  constructor(protected mobileService: MobileService) {}
+
+  setTitle(newTitle: string) {
+    this.title = newTitle;
+  }
 }
